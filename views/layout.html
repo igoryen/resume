@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang=en>
+
+  <head>
+    <meta http-equiv="content-type" content="text-html" charset="utf-8">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../public/css/main.css">
+
+    <title>
+      IY - {% block title %}
+      {{ title }}
+      {% endblock %}
+    </title>
+    {% block css %}
+    {% endblock %}
+  </head>
+  <body>
+    <div id="aa">
+    
+
+      {% block header %}{% endblock %}
+
+      <h1>Igor Entaltsev<h1>
+      {% block contact_info %}{% endblock %}
+
+      <ul id="menu">
+        <li><a href="/">Home</a></li>
+        <li><a href="/testimonies">Testimonies</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/contact">Contact</a></li>
+      </ul>
+
+      {% block content %}{% endblock %}
+      {% block news %}{% endblock %}
+
+      {% block footer %}{% endblock %}
+      <hr>
+      Made by igoryen in Node.js | Updated: <span id="updated"></span>
+      <script>document.getElementById("updated").innerHTML=document.lastModified;
+      </script>
+    </div>
+  </body>
+</html>
