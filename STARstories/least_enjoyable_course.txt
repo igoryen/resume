@@ -1,0 +1,2 @@
+Least enjoyable course.
+It was the IBC233. It was hardest to me because the languages it used (RPG, CLL) were very different from C. It took me a long time to become comfortable with it.
