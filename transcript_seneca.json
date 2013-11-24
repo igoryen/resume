@@ -1,0 +1,130 @@
+{
+	"semester 1": {
+		"courses": {
+			"ETY155":{
+				"name": "Electricity",
+				"grade": "B+",
+			},
+			"ICA002": {
+				"name": "Introduction to Computers and Applications",
+				"grade": "SAT"
+			},
+			"LIN155": {
+				"name": "Electronic Lab Instrumentation and Techniques",
+				"grade": "A+"
+			},
+			"MTH148": {
+				"name": "Foundations Of Technical Mathematics",
+				"grade": "EXC"
+			},
+			"PRG155": {
+				"name": "Programming Fundamentals Using C",
+				"grade": "A"
+			},
+			"EAC150": {
+				"name": "College English",
+				"grade": "EXM"
+			}
+		}
+	},
+	"semester 2": {
+		"courses": {
+			"DBS201": {
+				"name": "Introduction to Database Design and SQL",
+				"grade": "A"
+			},
+			"IBC233": {
+				"name": "i-Series Business Computing",
+				"grade": "A"
+			},
+			"IOS110": {
+				"name": "Introduction To Operating Systems Using Windows",
+				"grade": "A"
+			},
+			"ULI101": {
+				"name": "Introduction to Unix/Linux and the Internet",
+				"grade": "B+"
+			},
+			"APC100": {
+				"name": "Applied Professional Communications",
+				"grade": "A"
+			}
+		}
+	},
+	"semester 3": {
+		"courses": {
+			"DBS301": {
+				"name": "Database Design II and SQL using Oracle",
+				"grade": "1"
+			},
+			"INT222": {
+				"name": "Internet I - Internet Fundamentals",
+				"grade": "B+"
+			},
+			"OOP244": {
+				"name": "Introduction to Object Oriented Programming",
+				"grade": "B"
+			},
+			"SYS366": {
+				"name": "Requirements Gathering using OO Models",
+				"grade": "B"
+			},
+			"SES410": {
+				"name": "Evolution of the Detective in Fiction and Film",
+				"grade": "A"
+			}
+		}
+	},
+	"semester 4": {
+		"courses": {
+			"BAC344": {
+				"name": "Business Applications Using COBOL",
+				"grade": "A"
+			},
+			"INT322": {
+				"name": "Internet II - Web Programming on UNIX",
+				"grade": "B+"
+			},
+			"WIN210": {
+				"name": "Basic Administration of Microsoft Windows",
+				"grade": "B+"
+			},
+			"CUL199": {
+				"name": "Cultural Studies",
+				"grade": "ADV"
+			},
+			"SOC199": {
+				"name": "Social Science",
+				"grade": "ADV"
+			},
+			"EAC397": {
+				"name": "Business Report Writing",
+				"grade": "A"
+			},
+		}
+	},
+	"semester 5": {
+		"courses": {
+			"CPP100": {
+				"name": "PROFESSIONAL THEORY",
+				"grade": "SAT"
+			},
+			"DCN455": {
+				"name": "DATA COMM. NETWORKS	",
+				"grade": "B+"
+			},
+			"JAC444": {
+				"name": "INTRO.TO JAVA C++",
+				"grade": "C+"
+			},
+			"SYS466": {
+				"name": "ANALYSIS AND DESIGN",
+				"grade": "B+"
+			},
+			"CWT100": {
+				"name": "CO-OP WORK TERM",
+				"grade": "SAT"
+			}
+		}
+	}
+}
