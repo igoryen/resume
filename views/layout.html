@@ -7,30 +7,43 @@
     <link rel="stylesheet" href="../public/css/main.css">
 
     <title>
-      IY - {% block title %}
-      {{ title }}
-      {% endblock %}
+      IY - {% block title %}{{ title }}{% endblock %}
     </title>
-    {% block css %}
-    {% endblock %}
+    {% block css %}{% endblock %}
   </head>
   <body>
     <div id="aa">
     
-
       {% block header %}{% endblock %}
 
-      <h1>Igor Entaltsev<h1>
-      {% block contact_info %}{% endblock %}
+      <span class="centered"><h1>Igor Entaltsev</h1></span>
 
-      <ul id="menu">
-        <li><a href="/">Home</a></li>
-        <li><a href="/testimonies">Testimonies</a></li>
-        <li><a href="/about">About</a></li>
-        <li><a href="/contact">Contact</a></li>
-      </ul>
+      {% block contact %}{% endblock %}
 
-      {% block content %}{% endblock %}
+      <h2>OBJECTIVE</h2>
+      {% block objective %}{% endblock %}
+
+      <h2>HIGHLIGHTS OF QUALIFICATIONS</h2>
+      {% block highlights %}{% endblock %}
+
+      <h2>TECHNICAL SKILLS</h2>
+      {% block skills %}{% endblock %}
+
+      <h2>EDUCATION</h2>
+      {% block education %}{% endblock %}
+
+      <h2>ACADEMIC PROJECTS</h2>
+      {% block academic_projects %}{% endblock %}
+
+      <h2>EXPERIENCE</h2>
+      {% block experience %}{% endblock %}
+
+      <h2>VOLUNTEER EXPERIENCE</h2>
+      {% block volunteer_experience %}{% endblock %}
+
+      <h2>INTERESTS AND ACTIVITIES</h2>
+      {% block interests %}{% endblock %}
+
       {% block news %}{% endblock %}
 
       {% block footer %}{% endblock %}
