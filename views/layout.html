@@ -20,28 +20,28 @@
 
       {% block contact %}{% endblock %}
 
-      <h2>OBJECTIVE</h2>
+      <h3>OBJECTIVE</h3>
       {% block objective %}{% endblock %}
 
-      <h2>HIGHLIGHTS OF QUALIFICATIONS</h2>
+      <h3>HIGHLIGHTS OF QUALIFICATIONS</h3>
       {% block highlights %}{% endblock %}
 
-      <h2>TECHNICAL SKILLS</h2>
+      <h3>TECHNICAL SKILLS</h3>
       {% block skills %}{% endblock %}
 
-      <h2>EDUCATION</h2>
+      <h3>EDUCATION</h3>
       {% block education %}{% endblock %}
 
-      <h2>ACADEMIC PROJECTS</h2>
+      <h3>ACADEMIC PROJECTS</h3>
       {% block academic_projects %}{% endblock %}
 
-      <h2>EXPERIENCE</h2>
+      <h3>EXPERIENCE</h3>
       {% block experience %}{% endblock %}
 
-      <h2>VOLUNTEER EXPERIENCE</h2>
+      <h3>VOLUNTEER EXPERIENCE</h3>
       {% block volunteer_experience %}{% endblock %}
 
-      <h2>INTERESTS AND ACTIVITIES</h2>
+      <h3>INTERESTS AND ACTIVITIES</h3>
       {% block interests %}{% endblock %}
 
       {% block news %}{% endblock %}
@@ -49,8 +49,8 @@
       {% block footer %}{% endblock %}
       <hr>
       Made by igoryen in Node.js | Updated: <span id="updated"></span>
-      <script>document.getElementById("updated").innerHTML=document.lastModified;
-      </script>
+      <script>document.getElementById("updated").innerHTML=document.lastModified;</script>
+      {% block scripts %}{% endblock %}
     </div>
   </body>
 </html>
