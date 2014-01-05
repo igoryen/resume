@@ -14,6 +14,8 @@ app.configure( function (){
 });
 
 app.get("/", routes.pages("index"));
+app.get("/questions", routes.pages("questions"));
+
 
 app.listen(1977);
 console.log('Listening on port 1977');
