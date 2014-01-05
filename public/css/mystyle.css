@@ -62,7 +62,10 @@
 				padding-top: 5px;
 				padding-bottom: 5px;
 			}
+			
+			.photo{
 
+			}
 			.question{
 				font-weight: bold; 
 			}
@@ -81,6 +84,15 @@
 				font-weight: bold;
 				text-transform: capitalize;
 				padding-top: 10px;
+			}
+
+			.topbar{
+				background-color: lightgray;
+				font-family: sans-serif;
+				margin: auto;
+				text-align: center;
+				width: 50%;
+
 			}
 			.wide{
 				width: 200px;
