@@ -20,6 +20,10 @@
 						console.log("in name: "+ obj.name + no+"name");
 						document.getElementById(obj.name + no + "name").innerHTML = obj[no].name;
 					}
+					if (obj[no].hasOwnProperty("desc")){
+						console.log("in time: "+ obj.name + no);						
+						document.getElementById(obj.name + no + "desc").innerHTML = obj[no].time;
+					}
 					if (obj[no].hasOwnProperty("time")){
 						console.log("in time: "+ obj.name + no);						
 						document.getElementById(obj.name + no + "time").innerHTML = obj[no].time;
@@ -42,6 +46,40 @@
 					} // if
 				} // for
 			} // dispenser()
+
+
+			var dispenserForProj = function(obj, title){ // title = string for title
+				//console.log(obj.name + 1 + "name");
+				//console.log(Object.keys(obj).length);
+
+				var div_proj_title = document.createElement("div");
+				div_proj_title.id = obj.name + "title";
+				div_proj_title.className = "main_item";
+				document.getElementById(obj.name).appendChild(div_proj_title); // div proj / div proj title
+
+				document.getElementById(obj.name + "title").innerHTML = "<hr>" + title;
+
+
+				var len = Object.keys(obj).length;
+				for (var no=1; no < len; no++){
+					//document.getElementById(obj.name + no + "name").innerHTML = "aaaaaa";
+					var bag = "";
+					var div_proj = document.createElement("div"); // create a "div" element for a question
+					div_proj.id = obj.name + no; // give it an "id" - proj1
+											console.log("in for: " + div_proj.id);
+
+					div_proj.className = "padded"; // give it a "class"
+											console.log("in for: " + obj.name);
+
+					document.getElementById(obj.name).appendChild(div_proj); // append it to div with id=questions
+					bag = "<b>" + obj[no].name + ":</b> " + obj[no].desc; 
+					//console.log("id: "+ obj.name + no);
+					document.getElementById(obj.name + no).innerHTML = bag;
+				}	// for
+			} // dispenser()
+
+
+
 
 			var fullname = "igor entaltsev";
 			var address = "102-2980, Don Mills Rd, North York, ON, M2J 3B9";
@@ -198,6 +236,38 @@
 				"Created my own Teach-Yourself-English curriculum"
 			];
 
+			var proja = { // proja = project academic
+				name: "proja",
+				1: {
+					name: "Web-based Inventory Management System",
+					desc: "using PHP, HTML5, CSS, created a website for an online store on Apache Server that allowed users to securely login using encrypted passwords, to get the forgotten password hint in an email, to view, add, delete and edit records in the database using SQL queries and validation via regular expressions, and providing for SQL injection and cross-site scripting."
+				},
+				2: {
+					name: "Online Store Order Page",
+					desc: "using HTML5, CSS created a web page on a Linux server that allowed users to order a product online featuring fields validation using JavaScript"
+				},
+				3: {
+					name: "Construction Projects Maintenance Program",
+					desc: "using COBOL language designed and wrote a program on IBM i-Series server for user to view, search, add, delete, and edit records in a database file, as well as to create and print out project summary reports"
+				},
+				4: {
+					name: "Physical and Conceptual Database Design",
+					desc: "based upon an example company’s reports, invoice, and description of operations, developed an Entity Relationship Diagram, performed normalizations, prepared physical database descriptions, and created a relational DB2 database"
+				}	
+			}
+
+			var proj = {
+				name: "proj",
+				1: {
+					name: "Mozilla Webmaker",
+					desc: "Webmaker.org is a website whose purpose is to teach web literacy for free. An account on Webmaker.org enables a beginner to learn how to code HTML5 webpages, create web videos and even get certification for the skills gained. You can also join a community of mentors to help new learners and organize events to teach the web to the world."
+				},
+				2: {
+					name: "Mozilla TogetherJS",
+					desc: "TogetherJS is an application that enables a group of people to work on a project together at the same time. It allows each group member to see what the others are doing on a project and also to communicate with them (via text messages) in real time."
+				}
+			}
+				
 			document.getElementById("full_name").innerHTML = fullname;
 			document.getElementById("address").innerHTML = address + " &bull; " + phone + " &bull; " + email;
 			document.getElementById("objective").innerHTML = objective;
@@ -217,3 +287,5 @@
 			dispenser(exp);
 			listmaker(volun, "volun");
 			listmaker(achiev, "achiev");
+			dispenserForProj(proj, "projects");
+			dispenserForProj(proja, "academic projects");
