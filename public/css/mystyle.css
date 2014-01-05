@@ -1,14 +1,7 @@
-			#full_name{
-				font-size: x-large;
-				font-family: sans-serif;
-				font-weight: bold;
-				padding-bottom: 10px;
-				text-align: center;
-				text-transform: capitalize; 
-			}
 			#address{
 				text-align: center;
 			}
+			
 			body{
 				background-color: #999999;
 				font-family: monospace;
@@ -38,6 +31,16 @@
 			.edu_name{
 				font-weight: bold;
 			}
+
+			#full_name{
+				font-size: x-large;
+				font-family: sans-serif;
+				font-weight: bold;
+				padding-bottom: 10px;
+				text-align: center;
+				text-transform: capitalize; 
+			}
+
 			.indented{
 				padding-left: 20px;
 				padding-right: 10px;
@@ -60,6 +63,11 @@
 				padding-bottom: 5px;
 			}
 
+			.question{
+				font-weight: bold; 
+			}
+
+
 			.righted{
 				text-align: right; 			
 			}
@@ -68,9 +76,6 @@
 				text-align: left;
 			}
 
-			
-
-		
 			.sub_main_item{
 				/*white-space: nowrap; /*1*/
 				font-weight: bold;
@@ -84,8 +89,6 @@
 			.wider{
 				width: 450px;
 			}
-
-
 			
 			/*
 				1. forbid line break in table cell

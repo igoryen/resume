@@ -12,7 +12,7 @@ var starStoryDispenser = function(obj){
 		// dynamically lay the rails for a question
 		var div_q = document.createElement("div"); // create a "div" element for a question
 		div_q.id = obj.name + no + "q"; // give it an "id"
-		div_q.className = "sub_main_item"; // give it a "class"
+		div_q.className = "question padded"; // give it a "class"
 		document.getElementById("questions").appendChild(div_q); // append it to div with id=questions
 		
 		// dynamically lay the rails for an answer
