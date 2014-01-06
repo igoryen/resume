@@ -112,7 +112,7 @@
 					// lay the tracks for 2
 					var div_skill_names = document.createElement("div");
 					div_skill_names.id = obj.name + no + "names";
-					div_skill_names.className = "cell";
+					div_skill_names.className = "cell wider";
 					document.getElementById(obj.name + no).appendChild(div_skill_names);
 					// send the train on 1 and 2
 					document.getElementById(obj.name + no + "cat").innerHTML = obj[no].cat;
@@ -125,7 +125,35 @@
 			var address = "102-2980, Don Mills Rd, North York, ON, M2J 3B9";
 			var phone = "647-703-6200";
 			var email = "igor.yentaltsev@gmail.com";
-			var objective = "To secure an IT position in a dynamic organization where I can contribute my technical knowledge and my project management skills";
+
+			var linemaker = function(cont, id, title){ // var, id, "title"
+					console.log("cont: " + cont);
+					console.log("id: " + id);
+					console.log("title: " + title);
+					
+				var div_line_title = document.createElement("div"); // create a "div" element for a question
+				div_line_title.id = id + "_title"; // give it an "id" - tskill1
+				div_line_title.className = "main_item"; // give it a "class"
+									//console.log(id);
+				console.log("div_line_title :" + div_line_title);
+					//document.getElementById(id).innerHTML = "aaa";
+				document.getElementById(id).appendChild(div_line_title);
+				document.getElementById(id + "_title").innerHTML = "<hr>" + title;
+				//document.getElementById(id + "_title").innerHTML = "<hr>" + "title";
+
+				var div_line_cont = document.createElement("div"); // create a "div" element for a question
+				div_line_cont.id = id + "cont"; // give it an "id" - tskill1
+				//div_line.className = "main_item"; // give it a "class"
+				document.getElementById(id).appendChild(div_line_cont);
+									console.log(div_line_cont);
+				document.getElementById(id + "cont").innerHTML = cont;
+			}
+
+
+			var objctv = "To secure an IT position in a dynamic organization where I can contribute my technical knowledge and my project management skills";
+
+			linemaker(objctv, "objective", "objective");
+
 			var highlights = [
 				"Quality-oriented, tenacious, self-motivated, committed to teamwork, success-oriented hard worker",
 				"Committed to continuous learning and skill development", 
@@ -287,7 +315,7 @@
 				
 			document.getElementById("full_name").innerHTML = fullname;
 			document.getElementById("address").innerHTML = address + " &bull; " + phone + " &bull; " + email;
-			document.getElementById("objective").innerHTML = objective;
+			//document.getElementById("objective").innerHTML = objective;
 			
 			listmaker(highlights, "highlights", "highlights of qualifications");
 

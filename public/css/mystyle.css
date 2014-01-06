@@ -26,6 +26,7 @@
 				/*background-color: lightblue;*/
 				display: table-cell;
 				padding-right: 10px;
+				/*border: 1px dashed;*/
 			}
 
 			.edu_name{
@@ -97,7 +98,9 @@
 			.wide{
 				width: 200px;
 			}
-			
+			.wide3{
+				width: 250px;
+			}
 			.wider{
 				width: 450px;
 			}
