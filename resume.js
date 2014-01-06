@@ -1,164 +1,37 @@
-
-			var listmaker = function(ary, idr, title){ // volun, "volun", "volunteer experience"
-
-				var div_list_title = document.createElement("div");
-				div_list_title.id = idr + "title"; // "volun"
-				div_list_title.className = "main_item";
-				document.getElementById(idr).appendChild(div_list_title);
-				document.getElementById(idr + "title").innerHTML = "<hr>" + title;
-
-
-				for (var i = 0; i < ary.length; i++){
-					var bag = "";
-					var div_list_item = document.createElement("div");
-					div_list_item.id = idr + i;
-					document.getElementById(idr).appendChild(div_list_item);
-					//console.log(ary.length);
-					bag = "<li>"+ ary[i] + "</li>";
-					document.getElementById(idr + i).innerHTML = bag;	
-				}
-			}
-
-			var dispenser = function(obj){
-				//console.log(obj.name + 1 + "name");
-				//console.log(Object.keys(obj).length);
-
-				for (var no=1; no < Object.keys(obj).length; no++){
-					//document.getElementById(obj.name + no + "name").innerHTML = "aaaaaa";
-					if (obj[no].hasOwnProperty("name")){
-						console.log("in name: "+ obj.name + no+"name");
-						document.getElementById(obj.name + no + "name").innerHTML = obj[no].name;
-					}
-					if (obj[no].hasOwnProperty("desc")){
-						console.log("in time: "+ obj.name + no);						
-						document.getElementById(obj.name + no + "desc").innerHTML = obj[no].time;
-					}
-					if (obj[no].hasOwnProperty("time")){
-						console.log("in time: "+ obj.name + no);						
-						document.getElementById(obj.name + no + "time").innerHTML = obj[no].time;
-					}
-					if (obj[no].hasOwnProperty("place")){
-						console.log("in place: "+ obj.name + no);
-						document.getElementById(obj.name + no + "place").innerHTML = obj[no].place;
-					}
-					if (obj[no].hasOwnProperty("details")){
-							//console.log(obj[no].hasOwnProperty("details"));
-						var bag ="";
-							//console.log(Object.keys(obj[no].details).length);
-						for (var i=1; i <= Object.keys(obj[no].details).length; i++){
-							bag += "<li>"
-								//console.log(obj[no].details[i]);
-						  bag += obj[no].details[i];
-						  bag += "</li>";
-						} // for
-						document.getElementById(obj.name + no + "details").innerHTML = bag;
-					} // if
-				} // for
-			} // dispenser()
-
-
-			var dispenserForProj = function(obj, title){ // title = string for title
-				//console.log(obj.name + 1 + "name");
-				//console.log(Object.keys(obj).length);
-
-				var div_proj_title = document.createElement("div");
-				div_proj_title.id = obj.name + "title";
-				div_proj_title.className = "main_item";
-				document.getElementById(obj.name).appendChild(div_proj_title); // div proj / div proj title
-				document.getElementById(obj.name + "title").innerHTML = "<hr>" + title;
-
-
-				var len = Object.keys(obj).length;
-				for (var no=1; no < len; no++){
-					//document.getElementById(obj.name + no + "name").innerHTML = "aaaaaa";
-					var bag = "";
-					var div_proj = document.createElement("div"); // create a "div" element for a question
-					div_proj.id = obj.name + no; // give it an "id" - proj1
-											console.log("in for: " + div_proj.id);
-
-					div_proj.className = "padded"; // give it a "class"
-											console.log("in for: " + obj.name);
-
-					document.getElementById(obj.name).appendChild(div_proj); // append it to div with id=questions
-					bag = "<b>" + obj[no].name + ":</b> " + obj[no].desc; 
-					//console.log("id: "+ obj.name + no);
-					document.getElementById(obj.name + no).innerHTML = bag;
-				}	// for
-			} // dispenser()
-
-			var dispenserForSkills = function(obj, title){ // title = string for title
-				// lay the rails for "title"
-				var div_skills_title = document.createElement("div");
-				div_skills_title.id = obj.name + "title"; // skills_t
-				div_skills_title.className = "main_item";
-				document.getElementById(obj.name).appendChild(div_skills_title); // div proj / div proj title
-				// send the train on the rails
-				document.getElementById(obj.name + "title").innerHTML = "<hr>" + title;
-
-
-				var len = Object.keys(obj).length;
-
-				for (var no=1; no < len; no++){
-					// lay the tracks for row for 1 and 2
-					var div_skill = document.createElement("div"); // create a "div" element for a question
-					div_skill.id = obj.name + no; // give it an "id" - tskill1
-					div_skill.className = "row"; // give it a "class"
-					document.getElementById(obj.name).appendChild(div_skill); // append it to div with id=questions
-					// lay the tracks for 1
-					var div_skill_cat = document.createElement("div");
-					div_skill_cat.id = obj.name + no + "cat";
-					div_skill_cat.className = "cell wide sub_main_item";
-					document.getElementById(obj.name + no).appendChild(div_skill_cat);
-					// lay the tracks for 2
-					var div_skill_names = document.createElement("div");
-					div_skill_names.id = obj.name + no + "names";
-					div_skill_names.className = "cell wider";
-					document.getElementById(obj.name + no).appendChild(div_skill_names);
-					// send the train on 1 and 2
-					document.getElementById(obj.name + no + "cat").innerHTML = obj[no].cat;
-					document.getElementById(obj.name + no + "names").innerHTML = obj[no].names;
-				}	// for
-			} // dispenser()
-
+			// vars 
+			var objctv = "To secure an IT position in a dynamic organization where I can contribute my technical knowledge and my project management skills";
 
 			var fullname = "igor entaltsev";
 			var address = "102-2980, Don Mills Rd, North York, ON, M2J 3B9";
 			var phone = "647-703-6200";
 			var email = "igor.yentaltsev@gmail.com";
 
-			var linemaker = function(cont, id, title){ // var, id, "title"
-					console.log("cont: " + cont);
-					console.log("id: " + id);
-					console.log("title: " + title);
-					
-				var div_line_title = document.createElement("div"); // create a "div" element for a question
-				div_line_title.id = id + "_title"; // give it an "id" - tskill1
-				div_line_title.className = "main_item"; // give it a "class"
-									//console.log(id);
-				console.log("div_line_title :" + div_line_title);
-					//document.getElementById(id).innerHTML = "aaa";
-				document.getElementById(id).appendChild(div_line_title);
-				document.getElementById(id + "_title").innerHTML = "<hr>" + title;
-				//document.getElementById(id + "_title").innerHTML = "<hr>" + "title";
-
-				var div_line_cont = document.createElement("div"); // create a "div" element for a question
-				div_line_cont.id = id + "cont"; // give it an "id" - tskill1
-				//div_line.className = "main_item"; // give it a "class"
-				document.getElementById(id).appendChild(div_line_cont);
-									console.log(div_line_cont);
-				document.getElementById(id + "cont").innerHTML = cont;
-			}
-
-
-			var objctv = "To secure an IT position in a dynamic organization where I can contribute my technical knowledge and my project management skills";
-
-			linemaker(objctv, "objective", "objective");
+			// arrays
 
 			var highlights = [
 				"Quality-oriented, tenacious, self-motivated, committed to teamwork, success-oriented hard worker",
 				"Committed to continuous learning and skill development", 
 				"Multicultural experience, knowledge of several languages (Russian, Mandarin, German)"
 			];
+			var volun = [
+				"Effectively and knowledgeably supervised a staff of 8 teachers at a church Youth Department. On departure, was repeatedly asked to return because of good performance",
+				"Designed and manufactured theatrical scenery for a community theater production",
+				"Assisted in humanitarian aid distribution in the community during an economic crisis"
+			];
+
+			var hobby = [
+				"Teaching myself technology (IT, web development and design, automated translation)",
+				"Teaching myself languages (Chinese, Latin, Hebrew)",
+				"Teaching myself music (drums, guitar)"
+			];
+
+			var achiev = [
+				"Raised my children bilingual (English and Russian)",
+				"Created my own Teach-Yourself-English curriculum"
+			];
+
+
+			// objects
 
 			var tskills = {
 				name: "tskills",
@@ -264,23 +137,6 @@
 				}
 			};
 
-			var volun = [
-				"Effectively and knowledgeably supervised a staff of 8 teachers at a church Youth Department. On departure, was repeatedly asked to return because of good performance",
-				"Designed and manufactured theatrical scenery for a community theater production",
-				"Assisted in humanitarian aid distribution in the community during an economic crisis"
-			];
-
-			var hobby = [
-				"Teaching myself technology (IT, web development and design, automated translation)",
-				"Teaching myself languages (Chinese, Latin, Hebrew)",
-				"Teaching myself music (drums, guitar)"
-			];
-
-			var achiev = [
-				"Raised my children bilingual (English and Russian)",
-				"Created my own Teach-Yourself-English curriculum"
-			];
-
 			var proja = { // proja = project academic
 				name: "proja",
 				1: {
@@ -313,23 +169,167 @@
 				}
 			}
 				
-			document.getElementById("full_name").innerHTML = fullname;
-			document.getElementById("address").innerHTML = address + " &bull; " + phone + " &bull; " + email;
-			//document.getElementById("objective").innerHTML = objective;
-			
-			listmaker(highlights, "highlights", "highlights of qualifications");
+			// functions declarations and invocations
 
-			// document.getElementById("operatingsystems").innerHTML = oper_sys.join(", ");
-			// document.getElementById("programminglanguages").innerHTML = proglang.join(", ");
-			// document.getElementById("database").innerHTML = database.join(", ");
-			// document.getElementById("softwaretools").innerHTML = software.join(", ");
+			var dispenser = function(obj){
+				//console.log(obj.name + 1 + "name");
+				//console.log(Object.keys(obj).length);
+
+				for (var no=1; no < Object.keys(obj).length; no++){
+					//document.getElementById(obj.name + no + "name").innerHTML = "aaaaaa";
+					if (obj[no].hasOwnProperty("name")){
+						console.log("in name: "+ obj.name + no+"name");
+						document.getElementById(obj.name + no + "name").innerHTML = obj[no].name;
+					}
+					if (obj[no].hasOwnProperty("desc")){
+						console.log("in time: "+ obj.name + no);						
+						document.getElementById(obj.name + no + "desc").innerHTML = obj[no].time;
+					}
+					if (obj[no].hasOwnProperty("time")){
+						console.log("in time: "+ obj.name + no);						
+						document.getElementById(obj.name + no + "time").innerHTML = obj[no].time;
+					}
+					if (obj[no].hasOwnProperty("place")){
+						console.log("in place: "+ obj.name + no);
+						document.getElementById(obj.name + no + "place").innerHTML = obj[no].place;
+					}
+					if (obj[no].hasOwnProperty("details")){
+							//console.log(obj[no].hasOwnProperty("details"));
+						var bag ="";
+							//console.log(Object.keys(obj[no].details).length);
+						for (var i=1; i <= Object.keys(obj[no].details).length; i++){
+							bag += "<li>"
+								//console.log(obj[no].details[i]);
+						  bag += obj[no].details[i];
+						  bag += "</li>";
+						} // for
+						document.getElementById(obj.name + no + "details").innerHTML = bag;
+					} // if
+				} // for
+			} // dispenser()
+
+			dispenser(edu);
+			dispenser(exp);
+
+			var dispenserForProj = function(obj, title){ // title = string for title
+				//console.log(obj.name + 1 + "name");
+				//console.log(Object.keys(obj).length);
+
+				var div_proj_title = document.createElement("div");
+				div_proj_title.id = obj.name + "title";
+				div_proj_title.className = "main_item";
+				document.getElementById(obj.name).appendChild(div_proj_title); // div proj / div proj title
+				document.getElementById(obj.name + "title").innerHTML = "<hr>" + title;
+
+
+				var len = Object.keys(obj).length;
+				for (var no=1; no < len; no++){
+					//document.getElementById(obj.name + no + "name").innerHTML = "aaaaaa";
+					var bag = "";
+					var div_proj = document.createElement("div"); // create a "div" element for a question
+					div_proj.id = obj.name + no; // give it an "id" - proj1
+											console.log("in for: " + div_proj.id);
+
+					div_proj.className = "padded"; // give it a "class"
+											console.log("in for: " + obj.name);
+
+					document.getElementById(obj.name).appendChild(div_proj); // append it to div with id=questions
+					bag = "<b>" + obj[no].name + ":</b> " + obj[no].desc; 
+					//console.log("id: "+ obj.name + no);
+					document.getElementById(obj.name + no).innerHTML = bag;
+				}	// for
+			} // dispenser()
+
+			dispenserForProj(proj, "projects");
+			dispenserForProj(proja, "academic projects");
+
+
+			var dispenserForSkills = function(obj, title){ // title = string for title
+				// lay the rails for "title"
+				var div_skills_title = document.createElement("div");
+				div_skills_title.id = obj.name + "title"; // skills_t
+				div_skills_title.className = "main_item";
+				document.getElementById(obj.name).appendChild(div_skills_title); // div proj / div proj title
+				// send the train on the rails
+				document.getElementById(obj.name + "title").innerHTML = "<hr>" + title;
+
+
+				var len = Object.keys(obj).length;
+
+				for (var no=1; no < len; no++){
+					// lay the tracks for row for 1 and 2
+					var div_skill = document.createElement("div"); // create a "div" element for a question
+					div_skill.id = obj.name + no; // give it an "id" - tskill1
+					div_skill.className = "row"; // give it a "class"
+					document.getElementById(obj.name).appendChild(div_skill); // append it to div with id=questions
+					// lay the tracks for 1
+					var div_skill_cat = document.createElement("div");
+					div_skill_cat.id = obj.name + no + "cat";
+					div_skill_cat.className = "cell wide sub_main_item";
+					document.getElementById(obj.name + no).appendChild(div_skill_cat);
+					// lay the tracks for 2
+					var div_skill_names = document.createElement("div");
+					div_skill_names.id = obj.name + no + "names";
+					div_skill_names.className = "cell wider";
+					document.getElementById(obj.name + no).appendChild(div_skill_names);
+					// send the train on 1 and 2
+					document.getElementById(obj.name + no + "cat").innerHTML = obj[no].cat;
+					document.getElementById(obj.name + no + "names").innerHTML = obj[no].names;
+				}	// for
+			} // dispenser()
 
 			dispenserForSkills(tskills, "technical skills");
 
+			var linemaker = function(cont, id, title){ // var, id, "title"
+					
+				var div_line_title = document.createElement("div"); // create a "div" element for a question
+				div_line_title.id = id + "_title"; // give it an "id" - tskill1
+				div_line_title.className = "main_item"; // give it a "class"
+									//console.log(id);
+				console.log("div_line_title :" + div_line_title);
+					//document.getElementById(id).innerHTML = "aaa";
+				document.getElementById(id).appendChild(div_line_title);
+				document.getElementById(id + "_title").innerHTML = "<hr>" + title;
+				//document.getElementById(id + "_title").innerHTML = "<hr>" + "title";
+
+				var div_line_cont = document.createElement("div"); // create a "div" element for a question
+				div_line_cont.id = id + "cont"; // give it an "id" - tskill1
+				//div_line.className = "main_item"; // give it a "class"
+				document.getElementById(id).appendChild(div_line_cont);
+									console.log(div_line_cont);
+				document.getElementById(id + "cont").innerHTML = cont;
+			}
+
+			linemaker(objctv, "objective", "objective");
+
+			var listmaker = function(ary, idr, title){ // volun, "volun", "volunteer experience"
+
+				var div_list_title = document.createElement("div");
+				div_list_title.id = idr + "title"; // "volun"
+				div_list_title.className = "main_item";
+				document.getElementById(idr).appendChild(div_list_title);
+				document.getElementById(idr + "title").innerHTML = "<hr>" + title;
+
+
+				for (var i = 0; i < ary.length; i++){
+					var bag = "";
+					var div_list_item = document.createElement("div");
+					div_list_item.id = idr + i;
+					document.getElementById(idr).appendChild(div_list_item);
+					//console.log(ary.length);
+					bag = "<li>"+ ary[i] + "</li>";
+					document.getElementById(idr + i).innerHTML = bag;	
+				}
+			}
+
+			listmaker(highlights, "highlights", "highlights of qualifications");
 			listmaker(hobby, "hobby", "interests and activities");
-			dispenser(edu);
-			dispenser(exp);
 			listmaker(volun, "volun", "volunteer experience");
 			listmaker(achiev, "achiev", "achievements");
-			dispenserForProj(proj, "projects");
-			dispenserForProj(proja, "academic projects");
+			
+			
+			document.getElementById("full_name").innerHTML = fullname;
+			document.getElementById("address").innerHTML = address + " &bull; " + phone + " &bull; " + email;
+			
+
+			
