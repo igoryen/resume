@@ -86,7 +86,39 @@
 				}	// for
 			} // dispenser()
 
+			var dispenserForSkills = function(obj, title){ // title = string for title
+				// lay the rails for "title"
+				var div_skills_title = document.createElement("div");
+				div_skills_title.id = obj.name + "title"; // skills_t
+				div_skills_title.className = "main_item";
+				document.getElementById(obj.name).appendChild(div_skills_title); // div proj / div proj title
+				// send the train on the rails
+				document.getElementById(obj.name + "title").innerHTML = "<hr>" + title;
 
+
+				var len = Object.keys(obj).length;
+
+				for (var no=1; no < len; no++){
+					// lay the tracks for row for 1 and 2
+					var div_skill = document.createElement("div"); // create a "div" element for a question
+					div_skill.id = obj.name + no; // give it an "id" - tskill1
+					div_skill.className = "row"; // give it a "class"
+					document.getElementById(obj.name).appendChild(div_skill); // append it to div with id=questions
+					// lay the tracks for 1
+					var div_skill_cat = document.createElement("div");
+					div_skill_cat.id = obj.name + no + "cat";
+					div_skill_cat.className = "cell wide sub_main_item";
+					document.getElementById(obj.name + no).appendChild(div_skill_cat);
+					// lay the tracks for 2
+					var div_skill_names = document.createElement("div");
+					div_skill_names.id = obj.name + no + "names";
+					div_skill_names.className = "cell";
+					document.getElementById(obj.name + no).appendChild(div_skill_names);
+					// send the train on 1 and 2
+					document.getElementById(obj.name + no + "cat").innerHTML = obj[no].cat;
+					document.getElementById(obj.name + no + "names").innerHTML = obj[no].names;
+				}	// for
+			} // dispenser()
 
 
 			var fullname = "igor entaltsev";
@@ -99,49 +131,26 @@
 				"Committed to continuous learning and skill development", 
 				"Multicultural experience, knowledge of several languages (Russian, Mandarin, German)"
 			];
-			var oper_sys = [
-				"OS X", 
-				"Windows XP/7/8", 
-				"UNIX/Linux", 
-				"IBM AS/400"
-			];
 
-			var proglang = [
-				"HTML5", 
-				"CSS", 
-				"JavaScript", 
-				"JQuery", 
-				"PHP", 
-				"C", 
-				"C++", 
-				"C#",
-				"ASP.NET MVC4", 
-				"Java", 
-				"COBOL", 
-				"shell scripting"
-			];
-
-			var database = [
-				"SQL", 
-				"MySQL", 
-				"Oracle's SQL*Plus", 
-				"RPG", 
-				"DB2"
-			];
-
-			var software = [
-				"Node.js", 
-				"Git", 
-				"Sublime Text", 
-				"Microsoft Visual Studio", 
-				"Microsoft Windows Server 2008", 
-				"Apache Server", 
-				"Rational Rose modeling tool (with UML)", 
-				"IBM Rational Developer for Power Systems Software (RDP)", 
-				"Oracle RDBMS", 
-				"MS Office", 
-				"Libre Office"
-			];
+			var tskills = {
+				name: "tskills",
+			  1: {
+			  	cat: "operating system",
+					names: "OS X, Windows XP/7/8, UNIX/Linux, IBM AS/400"
+				},
+				2: {
+					cat: "programming languages",
+					names: "HTML5, CSS, JavaScript, JQuery, PHP, C, C++, C#, ASP.NET MVC4, Java, COBOL, shell scripting"
+				},
+				3: {
+					cat: "database",
+					names: "SQL, MySQL, Oracle's SQL*Plus, RPG, DB2"
+				},
+				4: {
+					cat: "software",
+					names: "Node.js, Git, Sublime Text, Microsoft Visual Studio, Microsoft Windows Server 2008, Apache Server, Rational Rose modeling tool (with UML), IBM Rational Developer for Power Systems Software (RDP), Oracle RDBMS, MS Office, Libre Office"
+				}
+			};
 
 			var edu = {
 				name: "edu",
@@ -282,10 +291,12 @@
 			
 			listmaker(highlights, "highlights", "highlights of qualifications");
 
-			document.getElementById("operatingsystems").innerHTML = oper_sys.join(", ");
-			document.getElementById("programminglanguages").innerHTML = proglang.join(", ");
-			document.getElementById("database").innerHTML = database.join(", ");
-			document.getElementById("softwaretools").innerHTML = software.join(", ");
+			// document.getElementById("operatingsystems").innerHTML = oper_sys.join(", ");
+			// document.getElementById("programminglanguages").innerHTML = proglang.join(", ");
+			// document.getElementById("database").innerHTML = database.join(", ");
+			// document.getElementById("softwaretools").innerHTML = software.join(", ");
+
+			dispenserForSkills(tskills, "technical skills");
 
 			listmaker(hobby, "hobby", "interests and activities");
 			dispenser(edu);
