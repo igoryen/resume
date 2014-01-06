@@ -1,13 +1,22 @@
 
-			var listmaker = function(ary, idr){
-				var bag = "";
+			var listmaker = function(ary, idr, title){ // volun, "volun", "volunteer experience"
+
+				var div_list_title = document.createElement("div");
+				div_list_title.id = idr + "title"; // "volun"
+				div_list_title.className = "main_item";
+				document.getElementById(idr).appendChild(div_list_title);
+				document.getElementById(idr + "title").innerHTML = "<hr>" + title;
+
+
 				for (var i = 0; i < ary.length; i++){
+					var bag = "";
+					var div_list_item = document.createElement("div");
+					div_list_item.id = idr + i;
+					document.getElementById(idr).appendChild(div_list_item);
 					//console.log(ary.length);
-					bag += "<li>";
-					bag += ary[i];
-					bag += "</li>";
+					bag = "<li>"+ ary[i] + "</li>";
+					document.getElementById(idr + i).innerHTML = bag;	
 				}
-				document.getElementById(idr).innerHTML = bag;	
 			}
 
 			var dispenser = function(obj){
@@ -56,7 +65,6 @@
 				div_proj_title.id = obj.name + "title";
 				div_proj_title.className = "main_item";
 				document.getElementById(obj.name).appendChild(div_proj_title); // div proj / div proj title
-
 				document.getElementById(obj.name + "title").innerHTML = "<hr>" + title;
 
 
@@ -272,20 +280,17 @@
 			document.getElementById("address").innerHTML = address + " &bull; " + phone + " &bull; " + email;
 			document.getElementById("objective").innerHTML = objective;
 			
-			listmaker(highlights, "highlights");
+			listmaker(highlights, "highlights", "highlights of qualifications");
 
 			document.getElementById("operatingsystems").innerHTML = oper_sys.join(", ");
 			document.getElementById("programminglanguages").innerHTML = proglang.join(", ");
 			document.getElementById("database").innerHTML = database.join(", ");
 			document.getElementById("softwaretools").innerHTML = software.join(", ");
 
-			listmaker(hobby, "hobby");
-			
-
-			
+			listmaker(hobby, "hobby", "interests and activities");
 			dispenser(edu);
 			dispenser(exp);
-			listmaker(volun, "volun");
-			listmaker(achiev, "achiev");
+			listmaker(volun, "volun", "volunteer experience");
+			listmaker(achiev, "achiev", "achievements");
 			dispenserForProj(proj, "projects");
 			dispenserForProj(proja, "academic projects");
