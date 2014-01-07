@@ -10,6 +10,7 @@
 				background-color: white;
 				box-shadow: 10px 10px 10px black;
 				font-family: sans-serif;
+
 				margin-top: 20px;
 				margin-bottom: 20px;
 				margin-left: 150px;
@@ -19,7 +20,6 @@
 				padding-bottom: 100px;
 				padding-left: 150px;
 				padding-right: 150px;
-
 			}
 
 			.cell{
@@ -95,16 +95,18 @@
 				width: 50%;
 
 			}
-			.wide{
-				width: 200px;
+			.wide1fourth{
+				width: 150px;
 			}
-			.wide3{
+			.wide1third{
 				width: 250px;
 			}
-			.wider{
+			.wide2thirds{
 				width: 450px;
 			}
-			
+			.wide3fourths{
+				width: 550px;
+			}
 			/*
 				1. forbid line break in table cell
 			*/

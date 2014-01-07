@@ -1,5 +1,7 @@
 			// vars 
-			var objctv = "To secure an IT position in a dynamic organization where I can contribute my technical knowledge and my project management skills";
+			var objctv1 = "To secure an IT position in a dynamic organization where I can contribute my technical knowledge and my project management skills";
+
+			var objctv2 = "To obtain a challenging and rewarding web developer position where I can utilize my knowledge, proficiency, and skills to contribute to a company's growth";
 
 			var fullname = "igor entaltsev";
 			var address = "102-2980, Don Mills Rd, North York, ON, M2J 3B9";
@@ -9,8 +11,8 @@
 			// arrays
 
 			var highlights = [
-				"Quality-oriented, tenacious, self-motivated, committed to teamwork, success-oriented hard worker",
-				"Committed to continuous learning and skill development", 
+				"Passionate about web development, committed to continuous learning and skill development",
+				"Quality-oriented, tenacious, self-motivated, committed to teamwork, success-oriented hard worker", 
 				"Multicultural experience, knowledge of several languages (Russian, Mandarin, German)"
 			];
 			var volun = [
@@ -37,11 +39,11 @@
 				name: "tskills",
 			  1: {
 			  	cat: "operating system",
-					names: "OS X, Windows XP/7/8, UNIX/Linux, IBM AS/400"
+					names: "Windows 8/7/XP, OS X, UNIX/Linux, IBM AS/400"
 				},
 				2: {
-					cat: "programming languages",
-					names: "HTML5, CSS, JavaScript, JQuery, PHP, C, C++, C#, ASP.NET MVC4, Java, COBOL, shell scripting"
+					cat: "programming",
+					names: "Node.js, Git, HTML5, CSS, JavaScript, JQuery, regex, C#, ASP.NET MVC4, PHP, C, C++, Java, COBOL, unit testing, shell scripting, website hosting"
 				},
 				3: {
 					cat: "database",
@@ -49,7 +51,7 @@
 				},
 				4: {
 					cat: "software",
-					names: "Node.js, Git, Sublime Text, Microsoft Visual Studio, Microsoft Windows Server 2008, Apache Server, Rational Rose modeling tool (with UML), IBM Rational Developer for Power Systems Software (RDP), Oracle RDBMS, MS Office, Libre Office"
+					names: "Sublime Text, Eclipse, NetBeans, Comodo, Microsoft Visual Studio, Microsoft Windows Server 2008, Apache Server, Rational Rose modeling tool (with UML), IBM Rational Developer for Power Systems Software (RDP), Oracle RDBMS, MS Office, Libre Office"
 				}
 			};
 
@@ -64,9 +66,9 @@
 					name: "Certificate in Teaching English to Adults",
 					time: "October - November 2007",
 					place: "Language Link, Beijing, China",
-					details: {
-						1: "Certificate awarded by Cambridge Educational Services Overseas Limited"
-					}
+					// details: {
+					// 	1: "Certificate awarded by Cambridge Educational Services Overseas Limited"
+					// }
 				},
 				3: {
 					name: "5-Year Diploma in Teaching English and German",
@@ -87,7 +89,7 @@
 					time: "may 2013 - december 2013",
 					place: "Seneca's Centre for Development of Open Technology (Co-op position)",
 					details: {
-						1: "Provided localization into more than 60 languages for Mozilla's web-based Webmaker.org tools and the TogetherJS application which helped Mozilla expand internationally"
+						1: "Provided localization and translation for Mozilla's web-based tools - Webmaker.org and TogetherJSoth - both built in Node.js. Localized the tools into more than 60 languages which helped Mozilla expand internationally" 
 					}
 				},
 				2: {
@@ -114,7 +116,7 @@
 					place: "AdlerKurort, Sochi, Russia",
 					details: {
 						1: "Supervised the work of a staff of 40 people; arranged foreign visitors visa registration",
-						2:	"Created a user manual for the public address and alarm system",
+						2:	"Created a user manual to help non-technical staff learn how to use the public address and alarm system",
 						3:	"Managed the first impressions of the company and of its brand; reconciled customer complaints"
 					}
 				},
@@ -123,7 +125,7 @@
 					time: "September 1998 - July 2000",
 					place: "The International School Of Tomorrow, Sochi, Russia",
 					details: {
-						1: "Taught three elementary school courses; made one course more attractive to students; prepared weekly reports;  provided translation services", 
+						1: "Taught three elementary school courses; made one course more attractive to students; prepared weekly reports; provided translation services", 
 						2: "Made a Russian translation of a multi-volume school curriculum"
 					}
 				},
@@ -161,11 +163,11 @@
 				name: "proj",
 				1: {
 					name: "Mozilla Webmaker",
-					desc: "Webmaker.org is a website whose purpose is to teach web literacy for free. An account on Webmaker.org enables a beginner to learn how to code HTML5 webpages, create web videos and even get certification for the skills gained. You can also join a community of mentors to help new learners and organize events to teach the web to the world."
+					desc: "a website built on Node.js intended to teach web literacy for free. Includes an in-browser HTML editor and a video-editor to create and/or remix and share web pages and videos, as well as a plugin to discover and learn DOM elements on a web page."
 				},
 				2: {
 					name: "Mozilla TogetherJS",
-					desc: "TogetherJS is an application that enables a group of people to work on a project together at the same time. It allows each group member to see what the others are doing on a project and also to communicate with them (via text messages) in real time."
+					desc: "a free, open source JavaScript library by Mozilla that adds collaboration features and tools to any website. By adding TogetherJS to the site, its users can help each other out on a website in real time."
 				}
 			}
 				
@@ -265,12 +267,12 @@
 					// lay the tracks for 1
 					var div_skill_cat = document.createElement("div");
 					div_skill_cat.id = obj.name + no + "cat";
-					div_skill_cat.className = "cell wide sub_main_item";
+					div_skill_cat.className = "cell wide1fourth sub_main_item";
 					document.getElementById(obj.name + no).appendChild(div_skill_cat);
 					// lay the tracks for 2
 					var div_skill_names = document.createElement("div");
 					div_skill_names.id = obj.name + no + "names";
-					div_skill_names.className = "cell wider";
+					div_skill_names.className = "cell wide3fourths";
 					document.getElementById(obj.name + no).appendChild(div_skill_names);
 					// send the train on 1 and 2
 					document.getElementById(obj.name + no + "cat").innerHTML = obj[no].cat;
@@ -300,7 +302,7 @@
 				document.getElementById(id + "cont").innerHTML = cont;
 			}
 
-			linemaker(objctv, "objective", "objective");
+			linemaker(objctv2, "objective", "objective");
 
 			var listmaker = function(ary, idr, title){ // volun, "volun", "volunteer experience"
 
