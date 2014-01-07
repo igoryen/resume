@@ -196,11 +196,9 @@
 						div_name.id = obj.name + no + "name";
 						div_name.className = "cell sub_main_item wide2thirds";
 						document.getElementById(obj.name + no + "row").appendChild(div_name); // edu1row/edu1name
-						//console.log("in name: "+ obj.name + no+"name");
 						document.getElementById(obj.name + no + "name").innerHTML = obj[no].name;
 					}
 					if (obj[no].hasOwnProperty("time")){
-						//console.log("in time: "+ obj.name + no);	
 						var div_time = document.createElement("div");
 						div_time.id = obj.name + no + "time";
 						div_time.className = "cell sub_main_item wide1third";
@@ -214,8 +212,6 @@
 						div_place.id = obj.name + no + "place";
 						div_place.className = "row";
 						document.getElementById(obj.name).appendChild(div_place); // edu/edu1place
-
-						console.log("in place: "+ obj.name + no);
 						document.getElementById(obj.name + no + "place").innerHTML = obj[no].place;
 					}
 					if (obj[no].hasOwnProperty("details")){
@@ -223,12 +219,9 @@
 						div_details.id = obj.name + no + "details";
 						div_details.className = "row indented";
 						document.getElementById(obj.name).appendChild(div_details); // edu/edu1details
-							//console.log(obj[no].hasOwnProperty("details"));
 						var bag ="";
-							//console.log(Object.keys(obj[no].details).length);
 						for (var i=1; i <= Object.keys(obj[no].details).length; i++){
 							bag += "<li>"
-								//console.log(obj[no].details[i]);
 						  bag += obj[no].details[i];
 						  bag += "</li>";
 						} // for
@@ -236,7 +229,6 @@
 					} // if
 
 					if (obj[no].hasOwnProperty("desc")){
-						console.log("in time: "+ obj.name + no);						
 						document.getElementById(obj.name + no + "desc").innerHTML = obj[no].time;
 					}
 
@@ -247,9 +239,7 @@
 			dispenser(exp, "work experience");
 
 			var dispenserForProj = function(obj, title){ // title = string for title
-				//console.log(obj.name + 1 + "name");
-				//console.log(Object.keys(obj).length);
-
+				
 				var div_proj_title = document.createElement("div");
 				div_proj_title.id = obj.name + "title";
 				div_proj_title.className = "main_item";
@@ -259,18 +249,12 @@
 
 				var len = Object.keys(obj).length;
 				for (var no=1; no < len; no++){
-					//document.getElementById(obj.name + no + "name").innerHTML = "aaaaaa";
 					var bag = "";
 					var div_proj = document.createElement("div"); // create a "div" element for a question
 					div_proj.id = obj.name + no; // give it an "id" - proj1
-											console.log("in for: " + div_proj.id);
-
 					div_proj.className = "padded"; // give it a "class"
-											console.log("in for: " + obj.name);
-
 					document.getElementById(obj.name).appendChild(div_proj); // append it to div with id=questions
 					bag = "<b>" + obj[no].name + ":</b> " + obj[no].desc; 
-					//console.log("id: "+ obj.name + no);
 					document.getElementById(obj.name + no).innerHTML = bag;
 				}	// for
 			} // dispenser()
@@ -320,18 +304,13 @@
 				var div_line_title = document.createElement("div"); // create a "div" element for a question
 				div_line_title.id = id + "_title"; // give it an "id" - tskill1
 				div_line_title.className = "main_item"; // give it a "class"
-									//console.log(id);
-				console.log("div_line_title :" + div_line_title);
-					//document.getElementById(id).innerHTML = "aaa";
 				document.getElementById(id).appendChild(div_line_title);
 				document.getElementById(id + "_title").innerHTML = "<hr>" + title;
-				//document.getElementById(id + "_title").innerHTML = "<hr>" + "title";
 
 				var div_line_cont = document.createElement("div"); // create a "div" element for a question
 				div_line_cont.id = id + "cont"; // give it an "id" - tskill1
 				//div_line.className = "main_item"; // give it a "class"
 				document.getElementById(id).appendChild(div_line_cont);
-									console.log(div_line_cont);
 				document.getElementById(id + "cont").innerHTML = cont;
 			}
 
@@ -350,8 +329,8 @@
 					var bag = "";
 					var div_list_item = document.createElement("div");
 					div_list_item.id = idr + i;
+					//div_list_item.className = "list";
 					document.getElementById(idr).appendChild(div_list_item);
-					//console.log(ary.length);
 					bag = "<li>"+ ary[i] + "</li>";
 					document.getElementById(idr + i).innerHTML = bag;	
 				}

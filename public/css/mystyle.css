@@ -3,6 +3,7 @@
 			}
 			
 			body{
+				/*background-image:url("../img/desk_bgd.jpg");*/
 				background-color: #999999;
 				font-family: monospace;
 			}
@@ -56,12 +57,14 @@
 				/*font-weight: bold;*/
 				font-family: "Arial Black";
 				text-transform: uppercase;
-				padding-bottom: 10px; 
+				padding-top: 7px; 
+				padding-bottom: 3px;
+
 			}
 			
 			.padded{
-				padding-top: 5px;
-				padding-bottom: 5px;
+				padding-top: 3px;
+				padding-bottom: 3px;*/
 			}
 			
 			.photo{
@@ -99,7 +102,7 @@
 				width: 150px;
 			}
 			.wide1third{
-				width: 250px;
+				width: 300px;
 			}
 			.wide2thirds{
 				width: 450px;
