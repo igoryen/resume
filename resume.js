@@ -173,29 +173,56 @@
 				
 			// functions declarations and invocations
 
-			var dispenser = function(obj){
-				//console.log(obj.name + 1 + "name");
-				//console.log(Object.keys(obj).length);
+			var dispenser = function(obj, title){
+
+				// lay tracks for title
+				var div_title = document.createElement("div");
+				div_title.id = obj.name + "title";
+				div_title.className = "main_item";
+				document.getElementById(obj.name).appendChild(div_title); // edu/edutitle
+				document.getElementById(obj.name + "title").innerHTML = "<hr>" + title;
 
 				for (var no=1; no < Object.keys(obj).length; no++){
+
+					var div_row = document.createElement("div");
+					div_row.id = obj.name + no + "row";
+					div_row.className = "row";
+					document.getElementById(obj.name).appendChild(div_row); // edu/edu1row
+
 					//document.getElementById(obj.name + no + "name").innerHTML = "aaaaaa";
 					if (obj[no].hasOwnProperty("name")){
-						console.log("in name: "+ obj.name + no+"name");
+					
+						var div_name = document.createElement("div");
+						div_name.id = obj.name + no + "name";
+						div_name.className = "cell sub_main_item wide2thirds";
+						document.getElementById(obj.name + no + "row").appendChild(div_name); // edu1row/edu1name
+						//console.log("in name: "+ obj.name + no+"name");
 						document.getElementById(obj.name + no + "name").innerHTML = obj[no].name;
 					}
-					if (obj[no].hasOwnProperty("desc")){
-						console.log("in time: "+ obj.name + no);						
-						document.getElementById(obj.name + no + "desc").innerHTML = obj[no].time;
-					}
 					if (obj[no].hasOwnProperty("time")){
-						console.log("in time: "+ obj.name + no);						
+						//console.log("in time: "+ obj.name + no);	
+						var div_time = document.createElement("div");
+						div_time.id = obj.name + no + "time";
+						div_time.className = "cell sub_main_item wide1third";
+						document.getElementById(obj.name + no + "row").appendChild(div_time); // edu1row/edu1time
 						document.getElementById(obj.name + no + "time").innerHTML = obj[no].time;
 					}
+					
 					if (obj[no].hasOwnProperty("place")){
+
+						var div_place = document.createElement("div");
+						div_place.id = obj.name + no + "place";
+						div_place.className = "row";
+						document.getElementById(obj.name).appendChild(div_place); // edu/edu1place
+
 						console.log("in place: "+ obj.name + no);
 						document.getElementById(obj.name + no + "place").innerHTML = obj[no].place;
 					}
 					if (obj[no].hasOwnProperty("details")){
+						var div_details = document.createElement("div");
+						div_details.id = obj.name + no + "details";
+						div_details.className = "row indented";
+						document.getElementById(obj.name).appendChild(div_details); // edu/edu1details
 							//console.log(obj[no].hasOwnProperty("details"));
 						var bag ="";
 							//console.log(Object.keys(obj[no].details).length);
@@ -207,11 +234,17 @@
 						} // for
 						document.getElementById(obj.name + no + "details").innerHTML = bag;
 					} // if
+
+					if (obj[no].hasOwnProperty("desc")){
+						console.log("in time: "+ obj.name + no);						
+						document.getElementById(obj.name + no + "desc").innerHTML = obj[no].time;
+					}
+
 				} // for
 			} // dispenser()
 
-			dispenser(edu);
-			dispenser(exp);
+			dispenser(edu, "education");
+			dispenser(exp, "work experience");
 
 			var dispenserForProj = function(obj, title){ // title = string for title
 				//console.log(obj.name + 1 + "name");
